@@ -1,0 +1,2 @@
+<p>template example</p>
+
