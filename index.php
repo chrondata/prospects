@@ -1,108 +1,54 @@
-<ul class="nav nav-pills" data-tabs="tabs">
-  <li role="presentation" class="active"><a href="#interactive_introduction" data-toggle="tab">Introduction</a></li>
-  <li role="presentation"><a href="#interactive_assets" data-toggle="tab">Assets</a></li>
-  <li role="presentation"><a href="#interactive_variables" data-toggle="tab">Variables</a></li>
-  <li role="presentation"><a href="#interactive_studioproject" data-toggle="tab">Studio Project</a></li>
-  <li role="presentation"><a href="#interactive_relatedphotos" data-toggle="tab">Related Photos</a></li>
-  <li role="presentation"><a href="#interactive_relateddocuments" data-toggle="tab">Related Documents</a></li>
-</ul>
-<br>
-<div id="my-tab-content" class="tab-content">
-    <div class="tab-pane active" id="interactive_introduction">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Quick Introduction</h3>
-            </div>
-            <div class="panel-body">
-            <p>Use the navigation above to find out more information about how to work with interactive views.</p>
-            </div>
-        </div>
-    </div>
-    <div class="tab-pane" id="interactive_assets">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">How to load assets from the asset directories</h3>
-            </div>
-            <div class="panel-body">
-                <dl>
-                    <dt>Javascript</dt>
-                    <dd>
-                        <pre><?php echo htmlentities('<?php echo $theme->asset->js(\'filename.js\'); ?>');?></pre>
-                    </dd>
-                    <dt>Cascading Style Sheets</dt>
-                    <dd>
-                        <pre><?php echo htmlentities('<?php echo $theme->asset->css(\'filename.css\'); ?>');?></pre>
-                    </dd>
-                    <dt>Images</dt>
-                    <dd>
-                        <pre><?php echo htmlentities('<?php echo $theme->asset->img(\'filename.jpg\'); ?>');?></pre>
-                    </dd>
-                </dd>
-            </div>
-        </div>
-    </div>
-    <div class="tab-pane" id="interactive_variables">
-        <?php foreach ($interactive->properties() as $variable_name): ?>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Variable: <?php echo $variable_name['name'];?></h3>
-          </div>
-          <div class="panel-body">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Value</h3>
-                </div>
-                <div class="panel-body">
-                    <?php echo ((call_user_func_array(array($interactive,'get_'.$variable_name['name']), array())) ?: '[empty]'); ?>
-                </div>
-                <div class="panel-heading">
-                    <h3 class="panel-title">Code</h3>
-                </div>
-                <div class="panel-body">
-                    <dl>
-                        <dt>Get the raw value: </dt>
-                        <dd>
-                            <pre><?php echo htmlentities('<?php echo $interactive->get_'.$variable_name['name'].'(); ?>');?></pre>
-                        </dd>
-                        <dt>Get the value with html entities encoded: </dt>
-                        <dd>
-                            <pre><?php echo htmlentities('<?php echo htmlentities($interactive->get_'.$variable_name['name'].'()); ?>');?></pre>
-                        </dd>
-                    </dl>
-                </div>
-              </div>
-          </div>
-        </div>
-        <?php endforeach;?>
-    </div>
-    <div class="tab-pane" id="interactive_studioproject">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Available Studio Projects</h3>
-            </div>
-            <div class="panel-body">
-            <p>TODO</p>
-            </div>
-        </div>
-    </div>
-    <div class="tab-pane" id="interactive_relatedphotos">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Available Related Photos</h3>
-            </div>
-            <div class="panel-body">
-            <p>TODO</p>
-            </div>
-        </div>
-    </div>
-    <div class="tab-pane" id="interactive_relateddocuments">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Available Related Documents</h3>
-            </div>
-            <div class="panel-body">
-            <p>TODO</p>
-            </div>
-        </div>
-    </div>
+<?php echo $theme->asset->css('phil400-2014-a.css'); ?>
+<?php echo $theme->asset->js('phil400main-2014-a.js'); ?>
+<?php echo $theme->asset->js('phil400shared-2014-a.js'); ?>
+
+<p><noscript>
+	<div class="interactive_error_message">This table requires Javascript. To see it, please <a href="http://www.google.com/support/bin/answer.py?answer=23852">turn Javascript on</a> or try using a different browser.</div>
+</noscript></p>
+<p class="interactive_graphic_lead">A <em>Chronicle</em> study of fundraising among the largest charities found a 10.9-percent increase in money raised from 2012 to 2013 for more than 330 charities that reported contributions for both years. Use the search below to view by organization, state, or category.   <a href="/article/A-Year-of-Recovery-Big-Gains/149447/">Related Article</a></p>
+<div class="table_options" style="height: 70px;">
+<div class="search">
+<h4>Search for an organization</h4>
+<input id="search_text" value="Example: united way" /></div>
+<span class="separator">OR</span>
+<div class="search" id="table_filters">
+<h4>Filter results</h4>
+<select id="filter_state"> <option value="all">All states</option> <option value="Alabama">Alabama</option> <option disabled="disabled" value="Alaska">Alaska</option> <option value="Arizona">Arizona</option> <option value="Arkansas">Arkansas</option> <option value="California">California</option> <option value="Colorado">Colorado</option> <option value="Connecticut">Connecticut</option> <option value="Delaware">Delaware</option> <option value="District of Columbia">District of Columbia</option> <option value="Florida">Florida</option> <option value="Georgia">Georgia</option> <option value="Hawaii">Hawaii</option> <option disabled="disabled" value="Idaho">Idaho</option> <option value="Illinois">Illinois</option> <option value="Indiana">Indiana</option> <option value="Iowa">Iowa</option> <option value="Kansas">Kansas</option> <option value="Kentucky">Kentucky</option> <option value="Louisiana">Louisiana</option> <option value="Maine">Maine</option> <option value="Maryland">Maryland</option> <option value="Massachusetts">Massachusetts</option> <option value="Michigan">Michigan</option> <option value="Minnesota">Minnesota</option> <option value="Mississippi">Mississippi</option> <option value="Missouri">Missouri</option> <option value="Nebraska">Nebraska</option> <option disabled="disabled" value="Nevada">Nevada</option> <option value="New Hampshire">New Hampshire</option> <option value="New Jersey">New Jersey</option> <option value="New Mexico">New Mexico</option> <option value="New York">New York</option> <option value="North Carolina">North Carolina</option> <option disabled="disabled" value="North Dakota">North Dakota</option> <option value="Ohio">Ohio</option> <option value="Oklahoma">Oklahoma</option> <option value="Oregon">Oregon</option> <option value="Pennsylvania">Pennsylvania</option> <option value="Rhode Island">Rhode Island</option> <option value="South Carolina">South Carolina</option> <option disabled="disabled" value="South Dakota">South Dakota</option> <option value="Tennessee">Tennessee</option> <option value="Texas">Texas</option> <option value="Utah">Utah</option> <option disabled="disabled" value="Vermont">Vermont</option> <option value="Virginia">Virginia</option> <option value="Washington">Washington</option> <option value="West Virginia">West Virginia</option> <option value="Wisconsin">Wisconsin</option> <option value="Wyoming">Wyoming</option> </select> <select id="filter_category"> <option value="all">All categories</option> <option value="Arts and Culture">Arts and Culture</option> <option value="Colleges and Universities">Colleges and Universities</option> <option value="Commercial Funds">Commercial Funds</option> <option value="Community Foundations">Community Foundations</option> <option value="Education">Education</option> <option value="Environmental and Animal Welfare">Environmental and Animal Welfare</option> <option value="Health">Health</option> <option value="Hospitals and Medical Centers">Hospitals and Medical Centers</option> <option value="International">International</option> <option value="Jewish Federations">Jewish Federations</option> <option value="Museums and Libraries">Museums and Libraries</option> <option value="Other">Other</option> <option value="Public Affairs">Public Affairs</option> <option value="Public Broadcasting">Public Broadcasting</option> <option value="Religious">Religious</option> <option value="Social Service">Social Service</option> <option value="Youth">Youth</option> </select></div>
+</div>
+<p><a class="di__tweet_button" href="https://twitter.com/intent/tweet?text=Check%20out%20America%E2%80%99s%20biggest%20charities%20in%20the%20%40Philanthropy%20400%3A%20http%3A%2F%2F.philanthropy.com%2Farticle%2F2014-Philanthropy-400%2F149383%2F%3Fkey%3DSz9zKVdgMChNZX43NGpAYWtWaXxkMxhzYXVOaS1wblFXGQ%3D%3D" target="_blank">#phil400 </a></p>
+<div id="interactive_table_wrapper" class="interactive_main">&nbsp;</div>
+<p><a name="notes"></a></p>
+<p class="notes"><sup>*</sup> Includes affiliates</p>
+<p class="notes"><sup>a</sup> Figures are from financial statements or other reports.</p>
+<p class="notes"><sup>b</sup> Organization raised at least half of donations in products.</p>
+<p class="notes"><sup>c</sup> Figure is for the 2012 fiscal year.</p>
+<p class="notes"><sup>d</sup> Figure includes cash donations to a capital campaign.</p>
+<p class="notes"><sup>1</sup> Receiving $500-million in settlement money over five years from the 2010 Gulf of Mexico oil spill. All of the money was recorded in 2013.</p>
+<p class="notes"><sup>2</sup> Previously known as Campus Crusade for Christ International</p>
+<p class="notes"><sup>3</sup> Previously known as United Negro College Fund</p>
+<p class="notes"><sup>4</sup> Previously known as Kids in Distressed Situations</p>
+<p class="notes"><sup>5</sup> Previously known as Christian Foundation for Children and Aging</p>
+<p style="font: 16px 'Source Sans Pro', Sans-serif; padding-top: 1em;">By Sandhya Kambhampati, Anu Narayanswamy, and Brian O'Leary</p>
+<div class="interactive_about"><a name="about_data"></a>
+<p><em><a name="updates"></a>Update, October 23, 4 p.m. -</em> The list has been updated to include 2013 figures for the Alzheimer's Association and the Carter Center and updated figures for Texas Tech. Habitat for Humanity's data were previously listed as including affiliates, but they do not. Additionally, we have added 2012 figures for Arc Thrift Stores, the Cleveland Clinic, the Crohn's &amp; Colitis Foundation of America, the Nemours Foundation, the Energy Foundation, the Greater Cincinnati Foundation, and NeighborWorks America. The list and rankings have been updated to reflect these changes.</p>
+<p><em>Corrections, October 27, 4 p.m. -</em> The URL for Christian Advocates Serving Evangelism was erroneously pointing to au.org, which is the website for Americans United for Separation of Church and State. It has been updated to correctly point to aclj.org, which is the American Center for Law and Justice which does business as Christian Advocates Serving Evangelism, Inc.</p>
+<p><em>Update, October 28, 5 p.m. -</em> The list has been updated to include affiliate data for both United States Fund for Unicef and Habitat for Humanity International. The footnote &ldquo;organization raised at least half of donations in products&rdquo; has been removed from Cedars-Sinai Medical Center. The list and rankings have been updated to reflect these changes.</p>
+<p><em>Update, October 30, 10 a.m. - </em>The list has been updated to correct private-support figures for World Vision. The list and rankings have been updated to reflect these changes.</p>
+<p><em>Update, November 7, 4 p.m. -</em> The Greater Kansas City Community Foundation provided incorrect figures for private support in our Philanthropy 400 survey. The list and rankings have been updated to reflect the correct numbers, which do not include data for affiliates.</p>
+<h2>About the Data</h2>
+<p><strong>How <em>The Chronicle</em> Compiled Its Philanthropy 400 Rankings of the Largest Charities</strong></p>
+<p>The Philanthropy 400 ranks charities that raised the most money from private sources in fiscal year 2013.</p>
+<p>The rankings are based on cash and product donations as well as stock, land, and other gifts from individuals, corporations, and foundations in the United States.</p>
+<p>The Philanthropy 400 is designed to show which groups do the best in appealing to donors, so other types of income, such as government payments, are not included.</p>
+<p>Donations raised outside the United States are also excluded, even if an organization has affiliates overseas.</p>
+<p>To gather data on private donations, <em>The Chronicle</em> used Internal Revenue Service Form 990 informational tax filings. It also examined financial statements and annual reports and sent a survey to all nonprofits likely to make the list.</p>
+<p>Organizations with affiliates are ranked based on consolidated figures; because some successful fundraising groups cannot provide this information, they do not appear on the list.</p>
+<p>Information is based on donations each group raised in its 2013 fiscal year. In 32 cases, organizations said they could not provide 2013 figures, so <em>The Chronicle</em> used 2012 figures to rank them.</p>
+<p><em>The Chronicle</em> aims to draw all figures from similar sources so that it can compare the data fairly. However, in some cases that&rsquo;s not practical. For instance, because public colleges do not have to file informational returns, <em>The Chronicle</em> relies on data collected by the Council for Aid to Education for both public and private colleges.</p>
+<p>Because the council does not allow institutions to count pledges, as the 990 allows, figures for colleges can easily be compared within that group but not to other institutions of a similar size.</p>
+<p><strong>Religious Groups</strong></p>
+<p>Religious groups are not required by law to file informational tax forms, but some voluntarily provided fundraising data so <em>The Chronicle</em> could rank them, while others declined.</p>
+<p>This year&rsquo;s Philanthropy 400 was able to include a consolidated figure on food banks affiliated with Feeding America. In the past, some of those food banks were included separately. To help readers see how each food bank fared, we have created <a href="/article/Private-Support-to-Individual/149471/" target="_blank">a separate list</a> highlighting how much 20 of the largest food banks raised from private sources.</p>
+<p><em>The Chronicle</em> strives to include all charities that may be eligible for the Philanthropy 400. To suggest a group for inclusion, please send an email to: <a href="mailto:research@philanthropy.com">research@philanthropy.com</a></p>
+<p><em>Mary Bowerman and Lance Lambert contributed to the compilation of the Philanthropy 400.</em></p>
 </div>
