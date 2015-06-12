@@ -37,6 +37,11 @@
                     <dd>
                         <pre><?php echo htmlentities('<?php echo $theme->asset->img(\'filename.jpg\'); ?>');?></pre>
                     </dd>
+                    <dt>Data (csv,json,xml,etc..)</dt>
+                    <dd>
+                        <p>Provides url location of the data item for use in javascript and other html tags or links.</p>
+                        <pre><?php echo htmlentities('<?php echo $theme->asset->get_file(\'filename.json\',\'data\');?>'); ?></pre>
+                    </dd>
                 </dd>
             </div>
         </div>
