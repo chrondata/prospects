@@ -5,6 +5,7 @@
   <li role="presentation"><a href="#interactive_studioproject" data-toggle="tab">Studio Project</a></li>
   <li role="presentation"><a href="#interactive_relatedphotos" data-toggle="tab">Related Photos</a></li>
   <li role="presentation"><a href="#interactive_relateddocuments" data-toggle="tab">Related Documents</a></li>
+  <li role="presentation"><a href="#interactive_comments" data-toggle="tab">Embedding Comments</a></li>
 </ul>
 <br>
 <div id="my-tab-content" class="tab-content">
@@ -110,4 +111,18 @@
             </div>
         </div>
     </div>
+    <div class="tab-pane" id="interactive_comments">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Comments</h3>
+            </div>
+            <div class="panel-body">
+                <p>Disqus comments can be added to an interactive by simply echo'ing the variable $comments in your view.</p>
+                <p>The disqus identifier is unique for each interactive view implemented.</p>
+                <p>Commenting must be turned on in WCM for a particular interactive before they can be displayed</p>
+                <div><?php echo $comments;?></div>
+            </div>
+        </div>
+    </div>
+
 </div>
