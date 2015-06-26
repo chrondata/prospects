@@ -119,7 +119,15 @@
             <div class="panel-body">
                 <p>Disqus comments can be added to an interactive by simply echo'ing the variable $comments in your view.</p>
                 <p>The disqus identifier is unique for each interactive view implemented.</p>
-                <p>Commenting must be turned on in WCM for a particular interactive before they can be displayed</p>
+                <p>Commenting must be turned on in WCM on the Properties tab for a particular interactive before they can be displayed</p>
+
+                <dl>
+                    <dt>Example Usage: </dt>
+                    <dd>
+                        <pre><?php echo htmlentities('<?php echo $comments; ?>');?></pre>
+                    </dd>
+                </dl>
+
                 <div><?php echo $comments;?></div>
             </div>
         </div>
