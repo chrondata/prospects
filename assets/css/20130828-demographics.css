@@ -649,16 +649,22 @@
    color: #3a3a3a;
     font: 16px/1.3em "Heuristica",serif;
 }
-
+.tap-noresponsive {
+	   background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #666666 0%, #0e0e0e 100%) repeat scroll 0 0;
+    margin: 5%;
+    padding: 5% 5% 6%;
+    text-align: center;
+    font: lighter 1.5em/1.5em 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: white;
+    display: none;
+    clear: both;
+}
 .tap-container h3 {
 	font-size: 100%;
 	margin-top: inherit;
 }
 .tap-container ul {
 	font-size: 1.125em;
-}
-.article {
-  max-width: 98%;
 }
 #disqus_thread {
   margin-left: 15em;  /* 240px / 16px */
@@ -1953,3 +1959,7 @@
       color: #aaa;
       margin-left: 0.357143em;  /* 5px / 14px */
     }
+@media(max-width: 1199px){
+	.tap-container > div {display: none;} 
+	.tap-container .tap-noresponsive {display: block;}
+}

@@ -8,6 +8,7 @@
 <p>As the U.S. population changes, so, too, will the makeup of American colleges and universities. In the coming years, they can expect to see significant changes in the demographics of their student bodies&mdash;and the regions from which students will hail.</p>
 <p>This tool highlights those changes, from the national level down to within the more than 3,000 counties in the U.S. See the key takeaways for every county, the trends in changing demographics, population densities, and search for areas with specific demographic attributes. (Related articles: <a href="/article/Demographic-Data-Let-Colleges/144101/">Colleges, Here Is Your Future</a> | <a href="/article/Bracing-for-Demographic/144085/">Changing Times, Tough Choices</a>)</p>
 <div id="tap-container" class="tap-container tap-core">
+	<div class="tap-noresponsive">This interactive is designed for viewports 1200 pixels or wider. Please view on a device with larger screen.</div>
 <div class="tap-search">
 <div id="tap-search-autocomplete" class="tap-area-collection">&nbsp;</div>
 <h1 id="tap-search-showing" class="tap-area-detail">&nbsp;</h1>
