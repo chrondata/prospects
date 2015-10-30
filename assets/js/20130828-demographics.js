@@ -1,4 +1,4 @@
-console.log("JS is running");
+
 /*! On Tap - v0.1.0-dev - 2014-08-21 */
 
 /*
@@ -28133,7 +28133,7 @@ Tap.config.popChartColors = {
 
 Tap.config.chartOtherThreshold = 90;
 
-Tap.config.containerSelector = '.tap-container';
+Tap.config.containerSelector = '#tap-container';
 
 Tap.config.stateAbbrs = {
   'Alabama': 'Ala.',
@@ -28321,7 +28321,6 @@ Tap.ordinalNum = function ordinalNum( value ) {
 };
 
 Tap.getFromDL = function getFromDL( request ) {
-	console.log("calling datalite");
   var countString = '',
     domain = 'd2',
     fieldText = '',
@@ -30019,19 +30018,18 @@ Tap.PopChartChart = Backbone.View.extend({
           '</strong>');
 
         this.$label.appendTo( $container ).html( labelText );
-        containerPos = $container.position();
-
-        if ( item.dataIndex < item.series.data.length / 2 ) {
-          this.$label.css({
-            left: pos.pageX - containerPos.left + 5,
-            top: pos.pageY - containerPos.top
-          });
-        } else {
+        containerPos = $container.offset();
+        //if ( item.dataIndex < item.series.data.length / 2 ) {
+        //  this.$label.css({
+        //    left: pos.pageX - containerPos.left + 10,
+        //    top: pos.pageY - containerPos.top
+        //  });
+       // } else {
           this.$label.css({
             left: pos.pageX - containerPos.left - this.$label.outerWidth() - 5,
-            top: pos.pageY - containerPos.top
+            top: (pos.pageY - containerPos.top) + 20
           });
-        }
+       //}
       }
     }, this ) );
 
@@ -31633,4 +31631,3 @@ function init() {
 init();
 /*end from init.js*/
 }( this ));
-

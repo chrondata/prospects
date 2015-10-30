@@ -1,6 +1,6 @@
 <?php echo $theme->asset->css('20130828-demographics.css'); ?>
 <?php echo $theme->asset->js('lib/jquery-ui.min.js'); ?>
-<?php echo $theme->asset->js('init.js'); ?>
+<?php echo $theme->asset->js('20130828-demographics.js'); ?>
 <div class="article">
 <p class="dateline">January 19, 2014</p>
 <h1>Prospects: Who Will Reach College Age in the Next 14 Years?</h1>
