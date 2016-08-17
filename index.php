@@ -2,9 +2,14 @@
 <?php echo $theme->asset->js('lib/jquery-ui.min.js'); ?>
 <?php echo $theme->asset->js('20130828-demographics.js'); ?>
 <div class="article">
-<p class="dateline">January 19, 2014</p>
-<h1>Prospects: Who Will Reach College Age in the Next 14 Years?</h1>
-<p class="byline">By Justin Myers</p>               
+<h1 class="content-item__title"><?php echo $interactive->get_title(); ?></h1>
+<div class="content-item__spacer">
+<span class="content-item__byline"><?php echo $interactive->get_byline(); ?></span>
+<span class="content-item__date"><?php
+$date = date_create($interactive->get_publicationDate());
+echo date_format($date,"F j, Y");
+?></span>
+</div>                
 <p>As the U.S. population changes, so, too, will the makeup of American colleges and universities. In the coming years, they can expect to see significant changes in the demographics of their student bodies&mdash;and the regions from which students will hail.</p>
 <p>This tool highlights those changes, from the national level down to within the more than 3,000 counties in the U.S. See the key takeaways for every county, the trends in changing demographics, population densities, and search for areas with specific demographic attributes. (Related articles: <a href="/article/Demographic-Data-Let-Colleges/144101/">Colleges, Here Is Your Future</a> | <a href="/article/Bracing-for-Demographic/144085/">Changing Times, Tough Choices</a>)</p>
 <div id="tap-container" class="tap-container tap-core">
