@@ -1,3 +1,1 @@
-Base interactive file structure.
-
-More to come.....
+The project files for the 2014 interactive "Who Will Reach College Age in the Next 14 Years?". The working version can be found here: Who Will Reach College Age in the Next 14 Years? Original code developed by Justin Myers.
